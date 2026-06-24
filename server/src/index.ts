@@ -12,7 +12,7 @@ const jwtSecret = process.env.JWT_SECRET;
 
 if (!jwtSecret) throw new Error("JWT_SECRET is not configured");
 
-app.use(cors({ origin: process.env.CLIENT_URL?.split(',') ?? true }));
+app.use(cors());
 app.use(express.json());
 
 type TokenPayload = { userId: string; role: Role };
